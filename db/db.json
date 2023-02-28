@@ -1,0 +1,6 @@
+{
+	"dbname":	"infoamazonia_bot",
+	"host"	:	"localhost",
+	"port"	:	27017
+}
+			
