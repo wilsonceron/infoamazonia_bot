@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
+'''
 -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* 
 
 										"whatsApp-Bot.py"
@@ -14,16 +14,17 @@
 								
 
 -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* 
-"""
+'''
 
 import os
 
 
-from classes import manager
+
+from classes import  manager
 
 
 if __name__ == "__main__":
 
-    manager = manager.Manager()
-    manager.start()
-
+	manager	=	manager.Manager()
+	manager.start()
+	
