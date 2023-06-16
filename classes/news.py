@@ -44,7 +44,7 @@ class News:
 			
 			number_of_pages	= 	 int(headers.get('X-WP-TotalPages'))
 			number_of_posts	=	headers.get('X-WP-Total')
-			#number_of_pages	= 	1		
+			number_of_pages	= 	1		
 			stop_update		=	False
 			
 			for page in iter(range(number_of_pages)):

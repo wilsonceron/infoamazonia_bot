@@ -76,14 +76,23 @@ class Manager:
 					except:
 						news_locations	=	set()		
 				
+				n	= {
+						"Title":news.get("Title") ,
+						"Description":news.get("Description"),
+						 "Author":news.get("Author"),
+						 "Subtopics":news.get("Subtopics"),
+						 "URL":news.get("URL"),
+						 "news_source":news.get("news_source")
+					}
+
+				
 				if	user_all_content:
-					user['news'].append({"Title":news.get("Title") , "Description":news.get("Description"), "URL":news.get("URL")})
+					user['news'].append(n)
 				else:
 					if user_topics_prefs.intersection(news_topics):
-							user['news'].append({"Title":news.get("Title") , "Description":news.get("Description"), "URL":news.get("URL")})
+						user['news'].append(n)
 					elif user_locations_prefs.intersection(news_locations):
-							user['news'].append({"Title":news.get("Title") , "Description":news.get("Description"), "URL":news.get("URL")})
-			
+						user['news'].append(n)
 		return user
 						
 	
@@ -108,8 +117,23 @@ class Manager:
 				for n in message.get("news"):
 					msg["Title"] 		=	n.get("Title")
 					msg["Description"]	=	n.get("Description")
-					msg["URL"]			=	n.get("URL")	
-					r =	self.client.send_message(user_id, "template",msg, log=True)
+					msg["URL"]			=	n.get("URL")
+					msg["Author"]		=	n.get("Author")	
+					source				=	n.get("news_source")
+					subtopics			=	n.get("Subtopics")
+					
+					if	source=="plenamata.eco":
+						if  ("Opinião" in subtopics):
+							r =	self.client.send_message(user_id, "opinion",msg, log=True)
+						elif  ("Boas iniciativas" in subtopics):
+							r =	self.client.send_message(user_id, "stories",msg, log=True)										
+					
+					if	source=="infoamazonia.org":
+						if  ("Opinião" in subtopics):
+							r =	self.client.send_message(user_id, "opinion",msg, log=True)
+						else:
+							r =	self.client.send_message(user_id, "stories",msg, log=True)		
+					
 					#print(r)
 	
 	def start_scheduler(self):

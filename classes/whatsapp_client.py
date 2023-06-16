@@ -187,8 +187,74 @@ class WhatsAppWrapper:
 								  }
 		
 		return payload
-		
 
+
+	def get_stories_template(self,payload, message):
+		payload["template"] =   {
+									"name": "posts_stories",
+									"language": {
+									  "code": "pt_BR"
+									},
+									"components": [
+									  {
+										"type": "body",
+										"parameters": [
+										  {
+											"type": "text",
+											"text": message.get("Title")
+										  },
+										  {
+											"type": "text",
+											"text": message.get("Description")
+										  },
+										   {
+											"type": "text",
+											"text": message.get("Author")
+										  },
+										  {
+											"type": "text",
+											"text": message.get("URL")
+										  }
+										]
+									  }
+									]
+								  }
+		
+		return payload
+
+
+	def get_opinion_template(self,payload, message):
+		payload["template"] =   {
+									"name": "posts_opinion",
+									"language": {
+									  "code": "pt_BR"
+									},
+									"components": [
+									  {
+										"type": "body",
+										"parameters": [
+										  {
+											"type": "text",
+											"text": message.get("Title")
+										  },
+										  {
+											"type": "text",
+											"text": message.get("Description")
+										  },
+										   {
+											"type": "text",
+											"text": message.get("Author")
+										  },
+										  {
+											"type": "text",
+											"text": message.get("URL")
+										  }
+										]
+									  }
+									]
+								  }
+		
+		return payload
 
 	def send_message(self, recipient_phone_number, message_type, message, log=None):
 		payload = { 
@@ -196,17 +262,21 @@ class WhatsAppWrapper:
 			"to": recipient_phone_number 
 		}
 
-
-		payload['type'] = message_type
-
 		if message_type=="text":
+			payload['type'] = "text"
 			payload['text'] =  {"body": message}
 			
 		if message_type=="interactive":
+			payload['type'] = "interactive"
 			payload['interactive'] = message
 
-		if message_type=="template":
-			payload	=	self.get_news_template(payload,message)
+		if message_type=="stories":
+			payload['type'] = "template"
+			payload	=	self.get_stories_template(payload,message)
+
+		if message_type=="opinion":
+			payload['type'] = "template"
+			payload	=	self.get_opinion_template(payload,message)
 
 		
 		#print(payload)
