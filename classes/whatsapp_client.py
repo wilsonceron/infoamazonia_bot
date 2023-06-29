@@ -41,38 +41,38 @@ class WhatsAppWrapper:
 	
 	def get_messages(self, message):
 
-		welcome="Olá, seja bem-vindo! Sou o robô de notícias da InfoAmazonia 🍃\nEnviamos os conteúdos recém publicados sobre o que mais te interessam sobre a Amazônia. O serviço é *GRATUITO*.\n\n📌 Para voltar a ver essas opções, digite *MENU* a qualquer momento\n📌 Se deseja cancelar sua inscrição, envie *CANCELAR* a qualquer momento e não te enviaremos mais notícias."
+		welcome="Boas vindas! Sou o robô de notícias da InfoAmazonia 🍃\nEnvio os conteúdos recém-publicados que mais te interessam sobre a Amazônia brasileira. O serviço é *GRATUITO*.\n\n📌 Para voltar a ver estas opções, me envie *MENU* a qualquer momento.\n📌 Se desejar parar de receber meus conteúdos, escreva *CANCELAR* a qualquer momento e não te mandarei mais notícias."
 		
-		image		=	"Desculpe não estamos aceitando imagens no momento 😥\nPor favor escolha uma das opções 😃"
-		document	=	"Desculpe não estamos aceitando documentos no momento 😥\nPor favor escolha uma das opções 😃"
-		location	=	"Desculpe não estamos aceitando localizações no momento 😥\nPor favor escolha uma das opções 😃"
-		contacts	=	"Desculpe não envie contatos 😥\n Por favor peça para que seus amigos nos envie diretamente uma mensagem 😃"
+		image		=	"Desculpe, mas eu ainda não consigo visualizar imagens. 😥\nPor favor, escolha uma das opções! 😃"
+		document	=	"Desculpe, mas eu ainda não consigo ler documentos. 😥\nPor favor, escolha uma das opções! 😃"
+		location	=	"Desculpe, mas eu ainda não entendo localizações compartilhadas. 😥\nPor favor, escolha uma das opções! 😃"
+		contacts	=	"Desculpe, mas eu ainda não reconheço contatos. 😥\nPara compartilhar este serviço com amigos, por favor, peça que me escrevam diretamente! 😃"
 
-		video		=	"Esse vídeo deve ser super legal, porém não estamos aceitando vídeo no momento 😥\nPor favor escolha uma das opções 😃"
-		audio		=	"Adoraria ouvir esse áudio, porém não estamos aceitando no momento 😥\nPor favor escolha uma das opções 😃"
-		sticker		=	"Seu sticker é muito bonitinho pórem não estamos aceitando no momento 😥\nPor favor escolha uma das opções 😃"
-		cancel_1	=	"Sua inscrição foi cancelada, não te enviaremos mais notícias 😥. Se você deseja voltar a assinar, só enviar MENU"
-		cancel_0	=	"Sua inscrição já tinha sido cancelada, já faz tempo que não te enviamos novas notícias 😥"
-		all_content	=	"Obrigado pela sua inscrição! 🙌 Em breve você começará a receber nosso conteúdo no seu WhatsApp 📲. Se quiser ver as opções novamente, só digitar MENU."
+		video		=	"Desculpe, mas eu ainda não consigo assistir vídeos. 😥\nPor favor, escolha uma das opções! 😃"
+		audio		=	"Desculpe, mas eu ainda não consigo escutar áudios. 😥\nPor favor, escolha uma das opções! 😃"
+		sticker		=	"Desculpe, mas eu ainda não consigo visualizar figurinhas. 😥\nPor favor, escolha uma das opções! 😃"
+		cancel_1	=	"Já cancelei sua inscrição e não enviarei novos conteúdos 😥. Se desejar voltar a receber, é só enviar *MENU*."
+		cancel_0	=	"Eu já havia cancelado sua inscrição e você vai continuar sem receber novos conteúdos da InfoAmazonia 😥. Quando quiser voltar a receber, é só escrever *MENU*."
+		all_content	=	"Obrigado pela sua inscrição! 🙌 Em breve você começará a receber nosso conteúdo no seu WhatsApp 📲. Se quiser ver as opções outra vez, é só digitar *MENU*."
 		
-		about		=	"InfoAmazonia é um veículo independente que utiliza dados, mapas e reportagens geolocalizadas para contar histórias sobre a maior floresta tropical contínua do planeta. " 
-		about		=	about +"As bases de dados usadas pelo InfoAmazonia são renovadas com frequência e estarão sempre disponíveis para download. "
-		about		=	about +"O cruzamento das notícias com os dados pretende melhorar a percepção sobre os desafios para a conservação da floresta."
+		about		=	"InfoAmazonia é um meio de comunicação que utiliza dados, mapas e reportagens geolocalizadas para revelar a importância global da maior floresta tropical do planeta. " 
+		about		=	about +"Vislumbramos um mundo onde a informação e o conhecimento transformam a forma como nos relacionamos com os territórios amazônicos em toda a sua  diversidade, ampliando a compreensão do papel vital desempenhado pela  Amazônia por todos."
+		about		=	about +"Trazemos contexto e aprofundamento à cobertura jornalística, indo além das notícias imediatas e buscando compreender as causas dos temas reportados para fomentar o debate público e estimular ações transformadoras."
 	
 		main_menu =	{
 					"type": "list",
 					"header": {
 					  "type": "text",
-					  "text": "Enviamos os conteúdos personalizados sobre a Amazônia"
+					  "text": "Envio apenas os conteúdos do seu interesse."
 					},
 					"body": {
-					  "text": "Como deseja receber nosso conteúdo?"
+					  "text": "Você quer ser informado sobre novos conteúdos de quais temas ou estados?"
 					},
 					"footer": {
 					  "text": "Escolha uma das opções"
 					},
 					"action": {
-					  "button": "Clique aqui!!!",
+					  "button": "Toque aqui!",
 					  "sections": [
 						{
 						  "title": "personalize o conteúdo",
@@ -80,22 +80,22 @@ class WhatsAppWrapper:
 							{
 							  "id": "MAIN_ALL_CONTENT",
 							  "title": "Tudo",
-							  "description": "Todos conteúdos sobre a floresta amazônica 🌳"
+							  "description": "Todos os conteúdos da InfoAmazonia 🌳"
 							},
 							{
 							  "id": "MAIN_LOCATIONS",
 							  "title": "Estados",
-							  "description": "Receber apenas conteúdos de determinados estados 🇧🇷"
+							  "description": "Escolha conteúdos sobre determinados estados 🇧🇷"
 							},
 							{
 							  "id": "MAIN_TOPCIS",
 							  "title": "Temas",
-							  "description": "Receber apenas conteúdos de determinados temas ✅"
+							  "description": "Escolha conteúdos sobre determinados temas ✅"
 							},
 							{
 							  "id": "MAIN_ABOUT",
 							  "title": "Sobre",
-							  "description": "Saber mais sobre a InfoAmazonia 🍃"
+							  "description": "Saiba mais sobre a InfoAmazonia 🍃"
 							},
 						  ]
 						}
@@ -495,10 +495,10 @@ class WhatsAppWrapper:
 					"type": "list",
 					"header": {
 					  "type": "text",
-					  "text": "👍Legal! Agora você poderá escolher quais temas te interessam "
+					  "text": "Escolha os temas:"
 					},
 					"body": {
-					  "text": "📝 Escolha uma das opções"
+					  "text": "📝 Selecione uma das opções."
 					},
 					"footer": {
 					  "text": "‎ "
@@ -521,7 +521,7 @@ class WhatsAppWrapper:
 
 
 	def __choose_topics(self, user, response,msg_id):
-		choose_topics	=	"👍Legal! Agora você poderá escolher quais temas te interessam 📝. Selecione o primeiro tema?"
+		choose_topics	=	"👍Legal! Agora você poderá escolher quais temas te interessam 📝. Selecione o primeiro tema. Você poderá escolher outros em seguida."
 		if not user['new']:
 			if user.get("all_content"):
 				self.send_message(user.get("user_id"), "text", "Você já estava cadastrado para receber todo nosso conteúdo 😃")
@@ -540,7 +540,7 @@ class WhatsAppWrapper:
 
 		if  msg_id=="TOPIC_BTN_YES":
 			if len(user.get("topics_prefs"))<6:
-				self.send_message(user.get("user_id"), "text", "Vamos escolher outro tema para receber conteúdos sobre a Amazônia 🌳.")
+				self.send_message(user.get("user_id"), "text", "Escolha agora outro tema de conteúdos sobre a Amazônia 🌳")
 				self.send_message(user.get("user_id"), "interactive", menu) 
 			else:
 				self.send_message(user.get("user_id"), "text", self.get_messages("ALL_CONTENT"))
@@ -621,10 +621,10 @@ class WhatsAppWrapper:
 					"type": "list",
 					"header": {
 					  "type": "text",
-					  "text": "Selecione qual estado você deseja receber conteúdos 🌳"
+					  "text": "Escolha os estados:"
 					},
 					"body": {
-					  "text": "📝 Escolha uma das opções"
+					  "text": "📝 Selecione uma das opções."
 					},
 					"footer": {
 					  "text": "‎ "
@@ -651,7 +651,7 @@ class WhatsAppWrapper:
 
 
 	def __choose_locations(self, user, response,msg_id):
-		choose_locations	=	"👍Legal! Agora você poderá escolher qual estado deseja receber conteúdos sobre a Amazônia 🌳. Selecione o primeiro estado 🇧🇷? "
+		choose_locations	=	"👍Legal! Agora você poderá escolher de qual estado deseja receber conteúdos sobre a Amazônia 🌳. Selecione o primeiro estado 🇧🇷."
 		if not user['new']:
 			if user.get("all_content"):
 				self.send_message(user.get("user_id"), "text", "Você já estava cadastrado para receber todo nosso conteúdo 😃")
@@ -694,7 +694,7 @@ class WhatsAppWrapper:
 
 			
 			if	msg_id!= "LOCATION_BTN_NO" and len(user.get("locations_prefs"))<9:	
-				button	=	self.create_button("🇧🇷Deseja receber conteúdos de outros estados", "Sim", "LOCATION_BTN_YES", "Não", "LOCATION_BTN_NO" )
+				button	=	self.create_button("🇧🇷 Quer receber conteúdos de outros estados?", "Sim", "LOCATION_BTN_YES", "Não", "LOCATION_BTN_NO" )
 				self.send_message(user.get("user_id"), "interactive", button)
 				return True	
 			if	msg_id== "LOCATION_BTN_NO":		
