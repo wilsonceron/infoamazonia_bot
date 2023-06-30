@@ -1,0 +1,6 @@
+apscheduler==3.10.1
+Flask==2.3.2
+numpy==1.25.0
+pymongo==4.4.0
+pytz==2023.3
+Requests==2.31.0
