@@ -1235,7 +1235,9 @@ This method is responsible for processing the statuses of user messages, specifi
 
 #### Process webhook notification
 This method is responsible for processing a webhook notification. It receives data as input and performs various operations based on the contents of the data. It iterates through the data entries and their changes. If the value contains "statuses," it calls the process_statuses method. Otherwise, it extracts information such as the name, user ID, message type, and subscription status from the data. If the message type is "text," it checks if the client's message is "cancelar" and updates the subscription status accordingly. For interactive messages, it extracts the interactive content. After processing the data, it calls other methods based on the content and message type, such as process_diff_contents and main_menu.
+
 ``` py linenums="1"
+	def process_webhook_notification(self, data):	
 		"""_summary_: Process webhook notification
 		For the moment, this will return the type of notification
 		"""
